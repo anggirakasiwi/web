@@ -1,0 +1,61 @@
+include  ../../users/dashboard
+// Content Wrapper. Contains page content
+.content-wrapper
+    // Content Header (Page header)
+    section.content-header
+        h1
+            | Data Raport
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+                    |  Home
+            li
+                a(href='#') Tables
+            li.active Data tables
+    // Main content
+    section.content
+        .row
+            .col-xs-12
+                // /.box-body
+                // /.box
+                .box
+                    .box-body
+                        .box.box-info
+                            .box-header.with-border
+                                h3.box-title Input data raport
+                            // /.box-header
+                            // form start
+                            form.form-horizontal(method="POST", action='/'+dataraports._id + '/editdataraport')
+                                .box-body
+                                    .form-group
+                                        label.col-sm-2.control-label(for='no') No
+                                        .col-sm-10
+                                            input#no.form-control(type='text' required name="No" placeholder='No' value= (no == undefined) ? dataraports.no: no)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='mapel') Mate Pelajaran
+                                        .col-sm-10
+                                            input#mapel.form-control(type='text' name="mapel" placeholder='Mata Pelajaran' value= (mapel == undefined) ? dataraports.mapel: mapel)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kkm') KKM
+                                        .col-sm-10
+                                            input#kkm.form-control(type='text' name="kkm" placeholder='KKm' value= (kkm == undefined) ? dataraports.kkm: kkm)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='nilaiangka') Nilai Angka
+                                        .col-sm-10
+                                            input#nilaiangka.form-control(type='text' name="nilaiangka" placeholder='Nilai Angka' value= (nilaiangka == undefined) ? dataraports.nilaiangka: nilaiangka)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='nilaihuruf') Nilai Huruf
+                                        .col-sm-10
+                                            input#nilaihuruf.form-control(type='text' name="nilaihuruf" placeholder='Nilai Huruf' value= (nilaihuruf == undefined) ? dataraports.nilaihuruf: nilaihuruf)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kemampuanbelajar') Kemampuan Belajar
+                                        .col-sm-10
+                                            input#kemampuanbelajar.form-control(type='text' name="kemampuanbelajar" placeholder='Kemampuan Belajar' value= (kemampuanbelajar == undefined) ? dataraports.kemampuanbelajar: kemampuanbelajar)
+
+
+                                // /.box-body
+                                .box-footer
+                                    button.btn.btn-info.pull-right(type='submit') Input Data
+                                // /.box-footer
+
